@@ -1,0 +1,102 @@
+{
+  "alimentacao": [
+    {
+      "pergunta": "Você consome carne?",
+      "opcoes": [
+        { "resposta": "Diariamente", "pontos": 5 },
+        { "resposta": "Algumas vezes na semana", "pontos": 3 },
+        { "resposta": "Raramente", "pontos": 1 },
+        { "resposta": "Nunca", "pontos": 0 }
+      ]
+    },
+    {
+      "pergunta": "Você consome produtos industrializados?",
+      "opcoes": [
+        { "resposta": "Frequentemente", "pontos": 4 },
+        { "resposta": "Às vezes", "pontos": 2 },
+        { "resposta": "Raramente", "pontos": 1 }
+      ]
+    }
+  ],
+
+  "moradia": [
+    {
+      "pergunta": "Qual o tamanho da sua casa?",
+      "opcoes": [
+        { "resposta": "Grande", "pontos": 4 },
+        { "resposta": "Média", "pontos": 2 },
+        { "resposta": "Pequena", "pontos": 1 }
+      ]
+    },
+    {
+      "pergunta": "Quantas pessoas moram com você?",
+      "opcoes": [
+        { "resposta": "1-2 pessoas", "pontos": 1 },
+        { "resposta": "3-4 pessoas", "pontos": 2 },
+        { "resposta": "5 ou mais", "pontos": 3 }
+      ]
+    },
+    {
+      "pergunta": "Como você avalia o seu consumo mensal de energia elétrica?",
+      "opcoes": [
+        { "resposta": "Alto (uso muito ar-condicionado, banhos demorados)", "pontos": 5 },
+        { "resposta": "Médio (uso normal dos eletrodomésticos)", "pontos": 3 },
+        { "resposta": "Baixo (tenho o hábito de economizar energia)", "pontos": 1 }
+      ]
+    },
+    {
+      "pergunta": "Quanto tempo, em média, dura o seu banho diário?",
+      "opcoes": [
+        { "resposta": "Mais de 15 minutos", "pontos": 5 },
+        { "resposta": "Entre 5 e 15 minutos", "pontos": 3 },
+        { "resposta": "Menos de 5 minutos", "pontos": 1 }
+      ]
+    }
+  ],
+
+  "transporte": [
+    {
+      "pergunta": "Qual meio de transporte você mais utiliza?",
+      "opcoes": [
+        { "resposta": "Carro", "pontos": 5 },
+        { "resposta": "Transporte público", "pontos": 2 },
+        { "resposta": "Bicicleta/andar", "pontos": 0 }
+      ]
+    },
+    {
+      "pergunta": "Você viaja de avião com frequência?",
+      "opcoes": [
+        { "resposta": "Frequentemente", "pontos": 5 },
+        { "resposta": "Raramente", "pontos": 2 },
+        { "resposta": "Nunca", "pontos": 0 }
+      ]
+    }
+  ],
+
+  "consumo": [
+    {
+      "pergunta": "Com que frequência compra roupas?",
+      "opcoes": [
+        { "resposta": "Frequentemente", "pontos": 4 },
+        { "resposta": "Às vezes", "pontos": 2 },
+        { "resposta": "Raramente", "pontos": 1 }
+      ]
+    },
+    {
+      "pergunta": "Você separa o lixo para reciclagem?",
+      "opcoes": [
+        { "resposta": "Sempre", "pontos": 0 },
+        { "resposta": "Às vezes", "pontos": 2 },
+        { "resposta": "Nunca", "pontos": 4 }
+      ]
+    },
+    {
+      "pergunta": "Qual é o destino que você dá ao óleo de cozinha usado?",
+      "opcoes": [
+        { "resposta": "Descarto direto na pia ou ralo", "pontos": 5 },
+        { "resposta": "Coloco em recipientes e jogo no lixo comum", "pontos": 3 },
+        { "resposta": "Guardo em garrafas e levo para reciclagem", "pontos": 0 }
+      ]
+    }
+  ]
+}

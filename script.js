@@ -254,6 +254,7 @@ function fecharModalOqueE() {
 // Função para minimizar ou maximizar o chat
 function toggleYunaChat() {
     const body = document.getElementById('yuna-chat-body');
+    // Se estiver escondido (none), ele muda para flex (abre). Se não, ele esconde (none).
     if (body.style.display === 'none' || body.style.display === '') {
         body.style.display = 'flex';
     } else {

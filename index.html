@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌱 Pegada Ecológica | Calcule seu Impacto</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PEGADA ECOLÓGICA</div>
+        <nav>
+            <div id="area-usuario" style="display: none;">
+                <span id="nome-usuario"></span>
+                <a href="#" onclick="sairDaConta(event)" id="btn-sair">SAIR</a>
+            </div>
+            
+            <a href="#" onclick="abrirModalOqueE(event)">O QUE É?</a> 
+            
+            <a href="#" onclick="abrirModal(event)">SOBRE</a>
+            
+            <a href="#" onclick="fazerLogin(event)" id="btn-login">LOGIN</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>DESCUBRA O SEU IMPACTO NO PLANETA</h1>
+            <p>Responda a algumas perguntas simples sobre o seu estilo de vida e calcule a sua pegada ecológica.</p>
+            <button class="btn-start" onclick="document.getElementById('quiz').scrollIntoView({behavior: 'smooth'})">COMEÇAR O CÁLCULO</button>
+        </section>
+
+        <section id="quiz" class="quiz-container">
+            <div class="quiz-card">
+                
+                <div class="progress-container">
+                    <span id="step-text">Progresso do Cálculo</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="barra-progresso" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div id="formulario">
+                    <h2 id="question">Carregando perguntas...</h2>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="btn-next" onclick="calcular()">Calcular 🌿</button>
+                </div>
+
+                <div class="result-area">
+                    <h2 id="resultado"></h2>
+                    
+                    <div class="chart-container">
+                        <canvas id="grafico"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-oque-e" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModalOqueE()">&times;</span>
+            <h2>O que é a Pegada Ecológica?</h2>
+            <p>A pegada ecológica mede o impacto das atividades humanas no meio ambiente, indicando a quantidade de recursos naturais como água, alimentos e energia necessária para sustentar um estilo de vida.</p>
+        </div>
+    </div>
+
+    <div id="modal-sobre" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <h2>Sobre o Projeto</h2>
+            <p>Este projeto foi criado para conscientizar sobre o nosso impacto ambiental diário. Através de perguntas simples sobre moradia, alimentação e transporte, buscamos ajudar você a entender a sua pegada ecológica.</p>
+            <p>O objetivo é incentivar pequenos passos para a sustentabilidade, mostrando que mudanças simples de hábitos fazem uma grande diferença para o nosso planeta! 🌍🌱</p>
+            <p><strong>Projeto criado por Yago Willian</strong></p>
+        </div>
+    </div>
+    <!-- ... resto do seu <main> e modais ... -->
+
+    <!-- ========================================== -->
+    <!-- INÍCIO DO COMPONENTE: CHAT DA YUNA         -->
+    <!-- ========================================== -->
+    <div id="yuna-chat-container" class="yuna-chat-container">
+        <!-- O cabeçalho minimiza e maximiza o chat -->
+        <div class="yuna-chat-header" onclick="toggleYunaChat()">
+            Chat com a Yuna 🍃
+        </div>
+        
+        <div id="yuna-chat-body" class="yuna-chat-body" style="display: flex;">
+            <div id="yuna-mensagens" class="yuna-mensagens">
+                <div class="msg yuna-msg">
+                    <span class="autor">Yuna</span>
+                    <p>Olá! Sou a Yuna. Como posso ajudar você com questões sobre sustentabilidade e a sua pegada ecológica hoje?</p>
+                </div>
+            </div>
+            <form id="yuna-form" onsubmit="enviarMensagemYuna(event)">
+                <input type="text" id="yuna-input" placeholder="Pergunte aqui..." autocomplete="off" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <!-- ========================================== -->
+
+    <footer>
+        <p>&copy; 2026 Calculadora de Pegada Ecológica | Sustentabilidade e Futuro</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

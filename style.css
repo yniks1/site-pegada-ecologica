@@ -64,13 +64,13 @@ nav a:hover {
 }
 
 /* 3. HERO SECTION (Introdução) */
-.hero p {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    opacity: 0.8;
+/* O container principal centraliza o Título e o Botão */
+.hero {
+    text-align: center; 
+    padding: 5rem 10% 3rem;
 }
 
+/* O título mantém as configurações normais dele */
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -78,11 +78,14 @@ nav a:hover {
     color: var(--primary-color);
 }
 
+/* O parágrafo fica centralizado na tela, mas com o texto justificado por dentro */
 .hero p {
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2rem; /* O 'auto' é o que mantém o bloco do texto no meio da tela */
     font-size: 1.1rem;
     opacity: 0.8;
+    text-align: justify; /* Justifica as laterais do texto */
+    text-align-last: center; /* 🔥 Dica de Ouro: Centraliza apenas a última linha do texto, deixando o visual muito mais elegante! */
 }
 
 .btn-start {

@@ -433,7 +433,7 @@ footer {
 }
 
 .yuna-chat-header {
-    background-color: #2E7D32; /* Verde combinando com o tema ecológico */
+    background-color: var(--primary-color); /* Padronizado para Verde Escuro */
     color: white;
     padding: 12px;
     text-align: center;
@@ -443,7 +443,7 @@ footer {
 }
 
 .yuna-chat-header:hover {
-    background-color: #1B5E20;
+    background-color: #1a463d; /* Hover padronizado */
 }
 
 .yuna-chat-body {
@@ -510,11 +510,11 @@ footer {
 }
 
 #yuna-input:focus {
-    border-color: #2E7D32;
+    border-color: var(--primary-color); /* Atualizado para combinar */
 }
 
 #yuna-form button {
-    background-color: #2E7D32;
+    background-color: var(--primary-color); /* Padronizado para Verde Escuro */
     color: white;
     border: none;
     padding: 10px 16px;
@@ -526,8 +526,9 @@ footer {
 }
 
 #yuna-form button:hover {
-    background-color: #1B5E20;
+    background-color: #1a463d; /* Hover padronizado */
 }
+
 #yuna-digitando {
     font-size: 0.9em;
     color: #666;
@@ -542,8 +543,9 @@ footer {
     50% { opacity: 1; }
     100% { opacity: 0.5; }
 }
+
 .btn-reiniciar {
-    background-color: #102C26; /* Verde escuro */
+    background-color: var(--primary-color); /* Padronizado para Verde Escuro */
     color: white;
     padding: 12px 24px;
     border: none;
@@ -555,9 +557,8 @@ footer {
     display: block;    /* Garante que ele ocupe a própria linha */
     width: fit-content;
     transition: background-color 0.3s;
-    
 }
 
 .btn-reiniciar:hover {
-    background-color: #1B5E20; /* Verde mais escuro quando passa o mouse */
+    background-color: #1a463d; /* Hover padronizado */
 }

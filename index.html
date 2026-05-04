@@ -57,18 +57,21 @@
                     <button class="btn-next" onclick="calcular()">Calcular 🌿</button>
                 </div>
 
-                <div class="result-area">
+                    <div class="result-area">
                     <h2 id="resultado"></h2>
                     
                     <div class="chart-container">
                         <canvas id="grafico"></canvas>
-                    </div>
+                    </div> <!-- Feche a div do gráfico aqui -->
+
+                    <!-- Adicione o botão AQUI, livre do gráfico, mas dentro da result-area! -->
+                    <button id="btn-reiniciar" class="btn-reiniciar" style="display: none;" onclick="reiniciarCalculo()">
+                        Refazer Cálculo 🔄
+                    </button>
+                    
                 </div>
-
-            </div>
-        </section>
-    </main>
-
+            </section>
+        </main>
     <div id="modal-oque-e" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="fecharModalOqueE()">&times;</span>

@@ -291,7 +291,7 @@ async function enviarMensagemYuna(evento) {
     digitandoElemento.className = 'msg yuna-msg'; // Usa suas classes de estilo existentes
     digitandoElemento.innerHTML = `
         <span class="autor">Yuna</span>
-        <p><em>Digitando... 🍃</em></p>
+        <p><em>Pesquisando... 🍃</em></p>
     `;
     chat.appendChild(digitandoElemento);
     chat.scrollTop = chat.scrollHeight;

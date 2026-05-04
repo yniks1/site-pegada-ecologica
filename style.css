@@ -69,7 +69,6 @@ nav a:hover {
     margin: 0 auto 2rem;
     font-size: 1.1rem;
     opacity: 0.8;
-    text-align: justify; /* 👈 Esta é a linha que faz a mágica da justificação */
 }
 
 .hero h1 {

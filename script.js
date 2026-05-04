@@ -285,30 +285,50 @@ async function enviarMensagemYuna(evento) {
     input.value = '';
     chat.scrollTop = chat.scrollHeight;
 
+    // 2. CRIAR O INDICADOR DE "DIGITANDO"
+    const digitandoElemento = document.createElement('div');
+    digitandoElemento.id = 'yuna-digitando';
+    digitandoElemento.className = 'msg yuna-msg'; // Usa suas classes de estilo existentes
+    digitandoElemento.innerHTML = `
+        <span class="autor">Yuna</span>
+        <p><em>Digitando... 🍃</em></p>
+    `;
+    chat.appendChild(digitandoElemento);
+    chat.scrollTop = chat.scrollHeight;
+
     try {
-        // 2. Chama a API da Yuna hospedada na nuvem
+        // 3. Chama a API da Yuna hospedada na nuvem
         const resposta = await fetch('https://pegada-yuna.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ texto: textoUsuario })
+            body: JSON.stringify({ texto: textoUsuario }) // Mantendo 'texto' conforme seu backend
         });
 
         const dados = await resposta.json();
 
-        // 3. Adiciona a resposta da Yuna na tela
-        chat.innerHTML += `
-            <div class="msg yuna-msg">
-                <span class="autor">Yuna</span>
-                <p>${dados.resposta}</p>
-            </div>
-        `;
+        // 4. REMOVER O INDICADOR ANTES DE EXIBIR A RESPOSTA
+        const indicador = document.getElementById('yuna-digitando');
+        if (indicador) indicador.remove();
+
+        // 5. Adiciona a resposta da Yuna na tela
+        if (dados.resposta) {
+            chat.innerHTML += `
+                <div class="msg yuna-msg">
+                    <span class="autor">Yuna</span>
+                    <p>${dados.resposta}</p>
+                </div>
+            `;
+        }
     } catch (erro) {
+        // REMOVER INDICADOR EM CASO DE ERRO
+        const indicador = document.getElementById('yuna-digitando');
+        if (indicador) indicador.remove();
+
         console.error("Erro na comunicação com a API da Yuna:", erro);
-        // Mensagem de erro caso o servidor do Uvicorn não esteja rodando
         chat.innerHTML += `
             <div class="msg yuna-msg" style="background-color: #ffebee; color: #c62828;">
                 <span class="autor">Sistema</span>
-                <p>Ops! A Yuna parece estar offline. O servidor FastAPI está rodando?</p>
+                <p>Ops! A Yuna parece estar offline. Verifique a conexão.</p>
             </div>
         `;
     }

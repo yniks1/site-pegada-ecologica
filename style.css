@@ -542,3 +542,21 @@ footer {
     50% { opacity: 1; }
     100% { opacity: 0.5; }
 }
+.btn-reiniciar {
+    background-color: #2E7D32; /* Verde escuro */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    display: block;
+    width: 100%; /* Faz o botão ocupar a largura toda, ótimo para celular */
+    transition: background-color 0.3s;
+}
+
+.btn-reiniciar:hover {
+    background-color: #1B5E20; /* Verde mais escuro quando passa o mouse */
+}

@@ -336,20 +336,4 @@ async function enviarMensagemYuna(evento) {
     // Rola o scroll para baixo novamente para ver a resposta nova
     chat.scrollTop = chat.scrollHeight;
 }
-// Função para expandir e reduzir o tamanho do chat
-function expandirYunaChat() {
-    // ATENÇÃO: Substitua 'yuna-chat-container' pelo ID correto da div principal 
-    // que envolve todo o seu chat (cabeçalho + corpo)
-    const containerPrincipal = document.getElementById('yuna-input'); 
-    const botaoExpandir = document.getElementById('btn-expandir-yuna');
 
-    // Liga ou desliga a classe gigante
-    containerPrincipal.classList.toggle('yuna-chat-expandido');
-
-    // Troca o ícone do botão para dar um feedback visual
-    if (containerPrincipal.classList.contains('yuna-chat-expandido')) {
-        botaoExpandir.innerHTML = '🗗'; // Ícone de restaurar tamanho
-    } else {
-        botaoExpandir.innerHTML = '⛶'; // Ícone de expandir
-    }
-}

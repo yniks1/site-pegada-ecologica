@@ -151,8 +151,46 @@ function calcular() {
 
   gerarGrafico(total);
   gerarDicas();
-}
 
+  // 👇 PASSO 2: MOSTRA O BOTÃO DE REINICIAR APÓS EXIBIR TUDO 👇
+  const btnReiniciar = document.getElementById('btn-reiniciar');
+  if (btnReiniciar) btnReiniciar.style.display = 'block';
+}
+// 🔹 FUNÇÃO PARA REINICIAR O CÁLCULO
+function reiniciarCalculo() {
+    // 1. Esconde o botão de reiniciar
+    document.getElementById('btn-reiniciar').style.display = 'none';
+
+    // 2. Limpa a área de resultados, gráfico e dicas
+    document.getElementById('resultado').innerText = "";
+    
+    if (grafico) {
+        grafico.destroy();
+        grafico = null;
+    }
+    
+    const areaDicas = document.getElementById("dicas-personalizadas");
+    if (areaDicas) {
+        areaDicas.innerHTML = "";
+    }
+
+    // 3. Desmarca todas as opções que o usuário clicou
+    document.querySelectorAll("input:checked").forEach(input => {
+        input.checked = false;
+    });
+
+    // 4. Tira a cor de seleção (verde) dos botões
+    document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.style.borderColor = "#ddd";
+        btn.style.backgroundColor = "transparent";
+    });
+
+    // 5. Zera a barra de progresso visual
+    atualizarProgresso();
+
+    // 6. Rola a tela suavemente para o topo (onde estão as perguntas)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 function gerarGrafico(total) {
   const ctx = document.getElementById('grafico').getContext('2d');
   if (grafico) { grafico.destroy(); }

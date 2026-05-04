@@ -58,7 +58,7 @@
     {
       "pergunta": "Qual meio de transporte você mais utiliza?",
       "opcoes": [
-        { "resposta": "Carro", "pontos": 5 },
+        { "resposta": "Carro/Moto", "pontos": 5 },
         { "resposta": "Transporte público", "pontos": 2 },
         { "resposta": "Bicicleta/andar", "pontos": 0 }
       ]

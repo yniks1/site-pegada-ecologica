@@ -563,3 +563,20 @@ footer {
 .btn-reiniciar:hover {
     background-color: #1a463d; /* Hover padronizado */
 }
+/* ========================================== */
+/* AJUSTES PARA CELULAR (RESPONSIVIDADE YUNA) */
+/* ========================================== */
+@media (max-width: 600px) {
+    .yuna-chat-container {
+        /* Ocupa a largura total da tela, menos 40px (20px de margem de cada lado) */
+        width: calc(100% - 40px) !important; 
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+
+    /* Regra para quando o usuário clicar no botão de expandir no celular */
+    .yuna-chat-expandido {
+        width: calc(100% - 40px) !important; /* Impede que os 600px quebrem a tela */
+        height: 65vh !important; /* Altura um pouco menor no celular para não cobrir o teclado */
+    }
+}

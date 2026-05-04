@@ -31,7 +31,7 @@
     {
       "pergunta": "Quantas pessoas moram na sua casa?",
       "opcoes": [
-        { "resposta": "1 pessoas", "pontos": 1 },
+        { "resposta": "1 pessoa", "pontos": 1 },
         { "resposta": "2-3 pessoas", "pontos": 2 },
         { "resposta": "4 ou mais", "pontos": 3 }
       ]

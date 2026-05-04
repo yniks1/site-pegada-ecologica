@@ -29,11 +29,11 @@
       ]
     },
     {
-      "pergunta": "Quantas pessoas moram com você?",
+      "pergunta": "Quantas pessoas moram na sua casa?",
       "opcoes": [
-        { "resposta": "1-2 pessoas", "pontos": 1 },
-        { "resposta": "3-4 pessoas", "pontos": 2 },
-        { "resposta": "5 ou mais", "pontos": 3 }
+        { "resposta": "1 pessoas", "pontos": 1 },
+        { "resposta": "2-3 pessoas", "pontos": 2 },
+        { "resposta": "4 ou mais", "pontos": 3 }
       ]
     },
     {

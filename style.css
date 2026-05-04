@@ -64,9 +64,12 @@ nav a:hover {
 }
 
 /* 3. HERO SECTION (Introdução) */
-.hero {
-    text-align: center;
-    padding: 5rem 10% 3rem;
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    text-align: justify; /* 👈 Esta é a linha que faz a mágica da justificação */
 }
 
 .hero h1 {

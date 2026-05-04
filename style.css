@@ -542,3 +542,20 @@ footer {
     50% { opacity: 1; }
     100% { opacity: 0.5; }
 }
+/* Classe que será ativada pelo botão de expandir */
+.yuna-chat-expandido {
+    width: 600px !important; /* Dobro da largura (ajuste esse valor conforme o seu layout padrão) */
+    height: 80vh !important; /* Aumenta a altura para ocupar 80% da tela */
+    transition: all 0.3s ease; /* Faz a mudança de tamanho ser suave e animada */
+}
+
+/* Opcional: Estilo para deixar o botão bonitinho no cabeçalho */
+#btn-expandir-yuna {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: auto; /* Empurra o botão para a direita */
+    padding: 0 10px;
+}

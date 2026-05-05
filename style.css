@@ -1,4 +1,4 @@
-* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+/* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS */
 :root {
     color-scheme: light;      /* 👈 Esta é a linha nova que trava o tema claro */
     --primary-color: #102C26; /* Verde Escuro */

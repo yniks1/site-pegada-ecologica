@@ -1,9 +1,9 @@
 /* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS */
 :root {
-    color-scheme: light;      /* 👈 Esta é a linha nova que trava o tema claro */
-    --primary-color: #102C26; /* Verde Escuro */
-    --bg-color: #F7E7CE;      /* Creme */
-    --card-bg: #ffffff;       /* Branco para o card */
+    color-scheme: light;      
+    --primary-color: #102C26; 
+    --bg-color: #F7E7CE;      
+    --card-bg: #ffffff;       
     --text-color: #102C26;
     --accent-color: #e0d1b8;
 }
@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif; /* Fonte moderna */
+    font-family: 'Inter', sans-serif; 
 }
 
 body {
@@ -21,14 +21,10 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     
-    /* Plantas minimalistas em SVG no fundo */
     background-image: 
-        /* Planta do canto superior esquerdo */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23102C26' opacity='0.04'%3E%3Cpath d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 7.05,10.67 9,12C10.95,13.33 16,13 14,16C12,19 8.5,18.5 7.85,16.5C8.84,15.74 11.5,13.62 11.5,13.62C11.5,13.62 10.6,12.78 9.5,11.5C8.4,10.22 8,9 8,9C8,9 13,8 17,8Z'/%3E%3C/svg%3E"),
-        /* Planta do canto inferior direito (rotacionada) */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23102C26' opacity='0.05'%3E%3Cpath d='M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 7.05,10.67 9,12C10.95,13.33 16,13 14,16C12,19 8.5,18.5 7.85,16.5C8.84,15.74 11.5,13.62 11.5,13.62C11.5,13.62 10.6,12.78 9.5,11.5C8.4,10.22 8,9 8,9C8,9 13,8 17,8Z'/%3E%3C/svg%3E");
     
-    /* Posicionamento para ficar nos cantos e não rolar com a tela */
     background-repeat: no-repeat;
     background-position: top -80px left -80px, bottom -80px right -80px;
     background-size: 450px, 600px;
@@ -50,10 +46,16 @@ header .logo {
     letter-spacing: 2px;
 }
 
+/* Estilo padrão de Navegação (Telas grandes / Computador) */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
 nav a {
     color: var(--bg-color);
     text-decoration: none;
-    margin-left: 20px;
     font-size: 0.9rem;
     font-weight: 300;
     transition: opacity 0.3s;
@@ -64,13 +66,11 @@ nav a:hover {
 }
 
 /* 3. HERO SECTION (Introdução) */
-/* O container principal centraliza o Título e o Botão */
 .hero {
     text-align: center; 
     padding: 5rem 10% 3rem;
 }
 
-/* O título mantém as configurações normais dele */
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -78,14 +78,13 @@ nav a:hover {
     color: var(--primary-color);
 }
 
-/* O parágrafo fica centralizado na tela, mas com o texto justificado por dentro */
 .hero p {
     max-width: 600px;
-    margin: 0 auto 2rem; /* O 'auto' é o que mantém o bloco do texto no meio da tela */
+    margin: 0 auto 2rem; 
     font-size: 1.1rem;
     opacity: 0.8;
-    text-align: justify; /* Justifica as laterais do texto */
-    text-align-last: center; /* 🔥 Dica de Ouro: Centraliza apenas a última linha do texto, deixando o visual muito mais elegante! */
+    text-align: justify; 
+    text-align-last: center; 
 }
 
 .btn-start {
@@ -108,7 +107,7 @@ nav a:hover {
 .quiz-container {
     display: flex;
     justify-content: center;
-    padding: 2rem 5% 8rem; /* Espaço para o footer não cobrir */
+    padding: 2rem 5% 8rem; 
 }
 
 .quiz-card {
@@ -120,14 +119,12 @@ nav a:hover {
     box-shadow: 0 15px 35px rgba(16, 44, 38, 0.08);
 }
 
-/* Títulos dentro do card */
 .quiz-card h2 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
-/* Barra de Progresso */
 .progress-container {
     margin-bottom: 2.5rem;
 }
@@ -154,7 +151,7 @@ nav a:hover {
     transition: width 0.5s ease;
 }
 
-/* 5. FORMULÁRIO DINÂMICO (Onde as perguntas aparecem) */
+/* 5. FORMULÁRIO DINÂMICO */
 #formulario {
     margin-bottom: 20px;
 }
@@ -163,14 +160,12 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* Estilo para labels/perguntas geradas pelo JS */
 #formulario label {
     display: block;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-/* Estilo para inputs (se você usar select ou text) */
 #formulario input, #formulario select {
     width: 100%;
     padding: 12px;
@@ -187,12 +182,11 @@ nav a:hover {
 /* 5.1 GRID E BOTÕES DE OPÇÃO DAS PERGUNTAS */
 .options-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Coloca uma opção abaixo da outra em celulares */
+    grid-template-columns: 1fr; 
     gap: 12px;
     margin-top: 15px;
 }
 
-/* Para telas maiores (computador), divide em duas colunas para aproveitar o espaço */
 @media (min-width: 600px) {
     .options-grid {
         grid-template-columns: 1fr 1fr;
@@ -213,19 +207,17 @@ nav a:hover {
     display: block;
 }
 
-/* Efeito ao passar o mouse por cima */
 .option-btn:hover {
     border-color: var(--primary-color);
     background-color: rgba(16, 44, 38, 0.04);
-    transform: translateY(-2px); /* Dá um pequeno "pulo" suave */
+    transform: translateY(-2px); 
 }
 
-/* Remove a margem padrão antiga para não desalinhar a nova grade */
 #formulario label.option-btn {
     margin-bottom: 0;
 }
 
-/* 6. BOTÕES DE AÇÃO (Calcular / Próximo) */
+/* 6. BOTÕES DE AÇÃO */
 .quiz-footer {
     display: flex;
     justify-content: center;
@@ -268,16 +260,14 @@ button:hover {
     font-style: italic;
 }
 
-/* Container que limita o tamanho do gráfico */
 .chart-container {
     position: relative;
-    height: 250px; /* Altura restrita e minimalista */
+    height: 250px; 
     width: 100%;
-    max-width: 450px; /* Impede que ele fique muito largo em telas grandes */
-    margin: 30px auto 0; /* O "auto" garante que fique perfeitamente centralizado */
+    max-width: 450px; 
+    margin: 30px auto 0; 
 }
 
-/* Garante que o canvas respeite a caixa */
 #grafico {
     width: 100% !important;
     height: 100% !important;
@@ -290,26 +280,26 @@ footer {
     text-align: center;
     padding: 1.5rem;
     font-size: 0.8rem;
-    position: relative; /* Mudado para não cobrir o conteúdo */
+    position: relative; 
     width: 100%;
 }
+
 /* 9. MODAL SOBRE */
 .modal {
-    display: none; /* Fica oculto até a pessoa clicar */
+    display: none; 
     position: fixed;
-    z-index: 1000; /* Fica por cima de tudo */
+    z-index: 1000; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* Fundo escuro semi-transparente usando o seu Verde Escuro */
     background-color: rgba(16, 44, 38, 0.6); 
-    backdrop-filter: blur(4px); /* Dá aquele efeito de desfoque moderno no fundo */
+    backdrop-filter: blur(4px); 
 }
 
 .modal-content {
     background-color: var(--card-bg);
-    margin: 10% auto; /* Centraliza vertical e horizontalmente */
+    margin: 10% auto; 
     padding: 3rem;
     border-radius: 15px;
     width: 90%;
@@ -330,7 +320,6 @@ footer {
     font-size: 1.05rem;
 }
 
-/* O botão 'X' de fechar */
 .close-btn {
     color: #aaa;
     position: absolute;
@@ -345,12 +334,13 @@ footer {
 .close-btn:hover {
     color: var(--primary-color);
 }
+
 /* 10. DICAS PERSONALIZADAS */
 #dicas-personalizadas {
     margin-top: 40px;
     padding: 25px;
-    background-color: rgba(16, 44, 38, 0.04); /* Fundo verdinho bem suave */
-    border-left: 4px solid var(--primary-color); /* Linha verde na lateral */
+    background-color: rgba(16, 44, 38, 0.04); 
+    border-left: 4px solid var(--primary-color); 
     border-radius: 8px;
     text-align: left;
 }
@@ -362,7 +352,7 @@ footer {
 }
 
 #dicas-personalizadas ul {
-    list-style-type: none; /* Remove as bolinhas pretas padrão */
+    list-style-type: none; 
     padding: 0;
 }
 
@@ -371,7 +361,7 @@ footer {
     font-size: 0.95rem;
     line-height: 1.5;
     color: var(--text-color);
-    background: #ffffff; /* Fundo branco para destacar cada dica */
+    background: #ffffff; 
     padding: 15px;
     border-radius: 8px;
     border: 1px solid #eee;
@@ -384,11 +374,15 @@ footer {
 }
 
 .mensagem-sucesso h3 {
-    color: #2e7d32; /* Um verde mais vibrante para celebrar */
+    color: #2e7d32; 
     margin-bottom: 5px;
 }
+
 /* 11. ÁREA DE LOGIN */
 #area-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-right: 20px;
     background-color: rgba(247, 231, 206, 0.1);
     padding: 5px 15px;
@@ -404,7 +398,7 @@ footer {
 }
 
 #btn-sair {
-    color: #ff6b6b; /* Um vermelho suave para o botão de sair */
+    color: #ff6b6b; 
     font-weight: 600;
     margin-left: 0;
 }
@@ -419,6 +413,7 @@ footer {
     padding: 5px 15px;
     border-radius: 20px;
 }
+
 /* ========================================== */
 /* ESTILOS DO CHAT DA YUNA                    */
 /* ========================================== */
@@ -431,7 +426,7 @@ footer {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     font-family: 'Inter', sans-serif;
-    z-index: 9999; /* Garante que fique acima dos outros elementos */
+    z-index: 9999; 
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -439,7 +434,7 @@ footer {
 }
 
 .yuna-chat-header {
-    background-color: var(--primary-color); /* Padronizado para Verde Escuro */
+    background-color: var(--primary-color); 
     color: white;
     padding: 12px;
     text-align: center;
@@ -449,7 +444,7 @@ footer {
 }
 
 .yuna-chat-header:hover {
-    background-color: #1a463d; /* Hover padronizado */
+    background-color: #1a463d; 
 }
 
 .yuna-chat-body {
@@ -485,14 +480,14 @@ footer {
 }
 
 .yuna-msg {
-    background-color: #E8F5E9; /* Fundo verde clarinho */
+    background-color: #E8F5E9; 
     color: #2e7d32;
     align-self: flex-start;
     border-bottom-left-radius: 2px;
 }
 
 .usuario-msg {
-    background-color: #E3F2FD; /* Fundo azul clarinho */
+    background-color: #E3F2FD; 
     color: #1565C0;
     align-self: flex-end;
     text-align: right;
@@ -516,11 +511,11 @@ footer {
 }
 
 #yuna-input:focus {
-    border-color: var(--primary-color); /* Atualizado para combinar */
+    border-color: var(--primary-color); 
 }
 
 #yuna-form button {
-    background-color: var(--primary-color); /* Padronizado para Verde Escuro */
+    background-color: var(--primary-color); 
     color: white;
     border: none;
     padding: 10px 16px;
@@ -532,7 +527,7 @@ footer {
 }
 
 #yuna-form button:hover {
-    background-color: #1a463d; /* Hover padronizado */
+    background-color: #1a463d; 
 }
 
 #yuna-digitando {
@@ -541,7 +536,7 @@ footer {
     padding: 8px;
     margin-bottom: 10px;
     font-style: italic;
-    animation: pulse 1.5s infinite; /* Faz o texto pulsar levemente */
+    animation: pulse 1.5s infinite; 
 }
 
 @keyframes pulse {
@@ -551,7 +546,7 @@ footer {
 }
 
 .btn-reiniciar {
-    background-color: var(--primary-color); /* Padronizado para Verde Escuro */
+    background-color: var(--primary-color); 
     color: white;
     padding: 12px 24px;
     border: none;
@@ -559,29 +554,69 @@ footer {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin: 30px auto; /* O 'auto' empurra o botão para o centro exato da tela */
-    display: block;    /* Garante que ele ocupe a própria linha */
+    margin: 30px auto; 
+    display: block;    
     width: fit-content;
     transition: background-color 0.3s;
 }
 
 .btn-reiniciar:hover {
-    background-color: #1a463d; /* Hover padronizado */
+    background-color: #1a463d; 
 }
+
 /* ========================================== */
-/* AJUSTES PARA CELULAR (RESPONSIVIDADE YUNA) */
+/* RESPONSIVIDADE E AJUSTES PARA CELULAR      */
 /* ========================================== */
+
+/* Responsividade da Yuna */
 @media (max-width: 600px) {
     .yuna-chat-container {
-        /* Ocupa a largura total da tela, menos 40px (20px de margem de cada lado) */
         width: calc(100% - 40px) !important; 
         right: 20px !important;
         bottom: 20px !important;
     }
 
-    /* Regra para quando o usuário clicar no botão de expandir no celular */
     .yuna-chat-expandido {
-        width: calc(100% - 40px) !important; /* Impede que os 600px quebrem a tela */
-        height: 65vh !important; /* Altura um pouco menor no celular para não cobrir o teclado */
+        width: calc(100% - 40px) !important; 
+        height: 65vh !important; 
+    }
+}
+
+/* Responsividade da Barra de Navegação (Layout do Header) */
+@media (max-width: 768px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto auto; 
+        column-gap: 20px;
+        row-gap: 10px;
+        align-items: center;
+    }
+
+    /* Posiciona: O QUE É? */
+    nav > a:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* Posiciona: SOBRE */
+    nav > a:nth-of-type(2) {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end; 
+    }
+
+    /* Posiciona: LOGIN */
+    #btn-login {
+        grid-column: 2;
+        grid-row: 2;    
+        justify-self: end;
+    }
+
+    /* Posiciona: ÁREA DO USUÁRIO (quando logado no celular) */
+    #area-usuario {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+        margin-right: 0; /* Remove a margem no celular para alinhar perfeitamente */
     }
 }

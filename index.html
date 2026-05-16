@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <header>
+<header>
         <div class="logo">PEGADA ECOLÓGICA</div>
         <nav>
             <div id="area-usuario" style="display: none;">
@@ -33,10 +33,10 @@
             </div>
             
             <a href="#" onclick="abrirModalOqueE(event)">O QUE É?</a> 
-            
             <a href="#" onclick="abrirModal(event)">SOBRE</a>
-            
             <a href="#" onclick="fazerLogin(event)" id="btn-login">LOGIN</a>
+            
+            <a href="#" onclick="abrirModalApoie(event)" class="btn-apoie-menu">APOIE 🌱</a>
         </nav>
     </header>
 
@@ -76,8 +76,6 @@
                 </div>
             </div> </section>
     </main>
-
-    <button id="btnApoie" class="btn-apoie" onclick="abrirModalApoie()">Apoie este projeto</button>
 
     <div id="modalApoie" class="modal-overlay">
         <div class="modal-content">

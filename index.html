@@ -135,17 +135,39 @@
 
     <script>
         // Abre a janela de apoio
+        <div id="modalApoie" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModalApoie()">&times;</span>
+            <h2>Apoie o Pegada Ecológica 🌱</h2>
+            <p>Sua contribuição ajuda a manter o projeto ativo e em evolução. Com o seu apoio, podemos ajudar mais pessoas a entenderem e reduzirem seu impacto no planeta de forma gratuita.</p>
+            
+            <div class="pix-container">
+                <p><strong>Minha Chave Pix (Aleatória):</strong></p>
+                <code id="chavePix">00000000-0000-0000-0000-000000000000</code>
+                <button id="btnCopiarPix" class="btn-copiar" onclick="copiarPix()">Copiar Chave Pix</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Calculadora de Pegada Ecológica | Sustentabilidade e Futuro</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Função que abre a janela
         function abrirModalApoie(event) {
-            if(event) event.preventDefault(); // Impede o site de dar aquele "pulo" chato pro topo
+            if(event) event.preventDefault(); // Evita que a página pule para o topo
             document.getElementById('modalApoie').style.display = 'flex';
         }
 
-        // Fecha a janela de apoio
+        // Função que fecha no X ou ao clicar fora
         function fecharModalApoie() {
             document.getElementById('modalApoie').style.display = 'none';
         }
 
-        // Copia a chave Pix e dá o aviso de sucesso
+        // Função que copia a chave Pix e dá o aviso verdinho
         function copiarPix() {
             const chave = document.getElementById('chavePix').innerText;
             
@@ -154,12 +176,11 @@
                 const textoOriginal = 'Copiar Chave Pix';
                 
                 btn.innerText = 'Copiado com sucesso! ✔️';
-                btn.style.backgroundColor = '#2e7d32'; // Fica verdinho
+                btn.style.backgroundColor = '#2e7d32'; 
                 
-                // Volta ao normal depois de 2.5 segundos
                 setTimeout(() => {
                     btn.innerText = textoOriginal;
-                    btn.style.backgroundColor = '#0d2b22'; // Volta para o verde escuro
+                    btn.style.backgroundColor = '#0d2b22';
                 }, 2500);
             }).catch(err => {
                 console.error('Erro ao copiar: ', err);

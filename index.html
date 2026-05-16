@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<header>
+    <header>
         <div class="logo">PEGADA ECOLÓGICA</div>
         <nav>
             <div id="area-usuario" style="display: none;">
@@ -70,11 +70,13 @@
                     
                     <div class="chart-container">
                         <canvas id="grafico"></canvas>
-                        </div> <button id="btn-reiniciar" class="btn-reiniciar" style="display: none;" onclick="reiniciarCalculo()">
+                    </div> 
+                    <button id="btn-reiniciar" class="btn-reiniciar" style="display: none;" onclick="reiniciarCalculo()">
                         Refazer Cálculo 
                     </button>
                 </div>
-            </div> </section>
+            </div> 
+        </section>
     </main>
 
     <div id="modalApoie" class="modal-overlay">
@@ -127,27 +129,6 @@
             </form>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2026 Calculadora de Pegada Ecológica | Sustentabilidade e Futuro</p>
-    </footer>
-
-    <script src="script.js"></script>
-
-    <script>
-        // Abre a janela de apoio
-        <div id="modalApoie" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="fecharModalApoie()">&times;</span>
-            <h2>Apoie o Pegada Ecológica 🌱</h2>
-            <p>Sua contribuição ajuda a manter o projeto ativo e em evolução. Com o seu apoio, podemos ajudar mais pessoas a entenderem e reduzirem seu impacto no planeta de forma gratuita.</p>
-            
-            <div class="pix-container">
-                <p><strong>Minha Chave Pix (Aleatória):</strong></p>
-                <code id="chavePix">00000000-0000-0000-0000-000000000000</code>
-                <button id="btnCopiarPix" class="btn-copiar" onclick="copiarPix()">Copiar Chave Pix</button>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <p>&copy; 2026 Calculadora de Pegada Ecológica | Sustentabilidade e Futuro</p>
@@ -162,7 +143,7 @@
             document.getElementById('modalApoie').style.display = 'flex';
         }
 
-        // Função que fecha no X ou ao clicar fora
+        // Função que fecha no X
         function fecharModalApoie() {
             document.getElementById('modalApoie').style.display = 'none';
         }

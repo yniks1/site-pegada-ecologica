@@ -1,192 +1,52 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light">
-    
-    <title>🌱 Pegada Ecológica | Calcule seu Impacto</title>
-    <meta name="google-site-verification" content="sqFRB1LuOx43NMRJO2FH8efNuaCZb_Al3vS2rDv2_wo" />
-    
-    <meta name="description" content="Calcule a sua pegada ecológica e aprenda sobre sustentabilidade com a Yuna, sua assistente virtual especialista em meio ambiente.">
-    <meta name="keywords" content="pegada ecológica, sustentabilidade, meio ambiente, inteligência artificial, calcular impacto ambiental, Yuna">
-    
-    <meta property="og:title" content="🌱 Pegada Ecológica com a Yuna">
-    <meta property="og:description" content="Descubra o seu impacto no planeta e receba dicas de sustentabilidade da nossa inteligência artificial.">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
-</head>
-<body>
-
-    <header>
-        <div class="logo">PEGADA ECOLÓGICA</div>
-        <nav>
-            <div id="area-usuario" style="display: none;">
-                <span id="nome-usuario"></span>
-                <a href="#" onclick="sairDaConta(event)" id="btn-sair">SAIR</a>
-            </div>
-            
-            <a href="#" onclick="abrirModalOqueE(event)">O QUE É?</a> 
-            
-            <a href="#" onclick="abrirModal(event)">SOBRE</a>
-            
-            <a href="#" onclick="fazerLogin(event)" id="btn-login">LOGIN</a>
-        </nav>
-    </header>
-
-    <main>
-        <button id="btnApoie" class="btn-apoie">Apoie este projeto</button>
-
-<div id="modalApoie" class="modal-overlay">
-  <div class="modal-content">
-    <span class="close-btn" id="closeModal">&times;</span>
-    <h2>Apoie o Pegada Ecológica 🌱</h2>
-    <p>Sua contribuição ajuda a manter o projeto ativo e em evolução. Com o seu apoio, podemos ajudar mais pessoas a entenderem e reduzirem seu impacto no planeta de forma gratuita.</p>
-    
-    <div class="pix-container">
-      <p><strong>Minha Chave Pix (Aleatória):</strong></p>
-      <code id="chavePix">00000000-0000-0000-0000-000000000000</code>
-      <button id="btnCopiarPix" class="btn-copiar">Copiar Chave Pix</button>
-    </div>
-  </div>
-</div>
+<main>
         <section class="hero">
             <h1>DESCUBRA O SEU IMPACTO NO PLANETA</h1>
-            <p>Pequenas atitudes diárias constroem o futuro da Terra. Em menos de 3 minutos, avalie seus hábitos, descubra o tamanho da sua pegada ecológica e aprenda, de forma simples e prática, como reduzir seu impacto ambiental. Comece agora a dar o primeiro passo rumo a um mundo mais sustentável e consciente.</p>
+            <p>Pequenas atitudes diárias constroem o futuro da Terra...</p>
             <button class="btn-start" onclick="document.getElementById('quiz').scrollIntoView({behavior: 'smooth'})">COMEÇAR O CÁLCULO</button>
         </section>
 
         <section id="quiz" class="quiz-container">
-            <div class="quiz-card">
+            <div class="quiz-card"> 
                 
                 <div class="progress-container">
-                    <span id="step-text">Progresso do Cálculo</span>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="barra-progresso" style="width: 0%;"></div>
                     </div>
-                </div>
 
                 <div id="formulario">
-                    <h2 id="question">Carregando perguntas...</h2>
-                </div>
+                    </div>
 
                 <div class="quiz-footer">
-                    <button class="btn-next" onclick="calcular()">Calcular 🌿</button>
-                </div>
+                    </div>
 
-                    <div class="result-area">
+                <div class="result-area">
                     <h2 id="resultado"></h2>
-                    
                     <div class="chart-container">
                         <canvas id="grafico"></canvas>
-                        <!-- Biblioteca para gerar imagem do resultado -->
-                    </div> <!-- Feche a div do gráfico aqui -->
-
-                    <!-- Adicione o botão AQUI, livre do gráfico, mas dentro da result-area! -->
+                    </div> 
                     <button id="btn-reiniciar" class="btn-reiniciar" style="display: none;" onclick="reiniciarCalculo()">
                         Refazer Cálculo 
                     </button>
-                    
                 </div>
-            </section>
-        </main>
-    <div id="modal-oque-e" class="modal">
+
+            </div> </section>
+    </main>
+
+    <button id="btnApoie" class="btn-apoie">Apoie este projeto</button>
+
+    <div id="modalApoie" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-btn" onclick="fecharModalOqueE()">&times;</span>
-            <h2>O que é a Pegada Ecológica?</h2>
-            <p>A pegada ecológica mede o impacto das atividades humanas no meio ambiente, indicando a quantidade de recursos naturais como água, alimentos e energia necessária para sustentar um estilo de vida.</p>
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Apoie o Pegada Ecológica 🌱</h2>
+            <p>Sua contribuição ajuda a manter o projeto ativo e em evolução. Com o seu apoio, podemos ajudar mais pessoas a entenderem e reduzirem seu impacto no planeta de forma gratuita.</p>
+            <div class="pix-container">
+                <p><strong>Minha Chave Pix (Aleatória):</strong></p>
+                <code id="chavePix">00000000-0000-0000-0000-000000000000</code>
+                <button id="btnCopiarPix" class="btn-copiar">Copiar Chave Pix</button>
+            </div>
         </div>
     </div>
+
+    <div id="modal-oque-e" class="modal">
+        </div>
 
     <div id="modal-sobre" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="fecharModal()">&times;</span>
-            <h2>Sobre o Projeto</h2>
-            <p>Este projeto foi criado para conscientizar sobre o nosso impacto ambiental diário. Através de perguntas simples sobre moradia, alimentação e transporte, buscamos ajudar você a entender a sua pegada ecológica.</p>
-            <p>O objetivo é incentivar pequenos passos para a sustentabilidade, mostrando que mudanças simples de hábitos fazem uma grande diferença para o nosso planeta! 🌍🌱</p>
-            <p><strong>Projeto criado por Yago Willian</strong></p>
         </div>
-    </div>
-    <!-- ... resto do seu <main> e modais ... -->
-
-    <!-- ========================================== -->
-    <!-- INÍCIO DO COMPONENTE: CHAT DA YUNA         -->
-    <!-- ========================================== -->
-    <div id="yuna-chat-container" class="yuna-chat-container">
-        <!-- O cabeçalho minimiza e maximiza o chat -->
-        <div class="yuna-chat-header" onclick="toggleYunaChat()">
-            Pergunte a Yuna 🍃
-        </div>
-        
-        <div id="yuna-chat-body" class="yuna-chat-body" style="display: none;">
-            <div id="yuna-mensagens" class="yuna-mensagens">
-                <div class="msg yuna-msg">
-                    <span class="autor">Yuna</span>
-                    <p>Olá! Sou a Yuna. Como posso ajudar?</p>
-                </div>
-            </div>
-            <form id="yuna-form" onsubmit="enviarMensagemYuna(event)">
-                <input type="text" id="yuna-input" placeholder="Pergunte aqui..." autocomplete="off" required>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </div>
-    <!-- ========================================== -->
-
-    <footer>
-        <p>&copy; 2026 Calculadora de Pegada Ecológica | Sustentabilidade e Futuro</p>
-    </footer>
-
-    <script src="script.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btnApoie = document.getElementById('btnApoie');
-            const modalApoie = document.getElementById('modalApoie');
-            const closeModal = document.getElementById('closeModal');
-            const btnCopiarPix = document.getElementById('btnCopiarPix');
-            const chavePix = document.getElementById('chavePix').innerText;
-
-            // Função para abrir o modal (usando flex para centralizar perfeitamente)
-            btnApoie.addEventListener('click', () => {
-                modalApoie.style.display = 'flex';
-            });
-
-            // Fechar no botão X
-            closeModal.addEventListener('click', () => {
-                modalApoie.style.display = 'none';
-            });
-
-            // Fechar ao clicar fora da caixinha (no fundo escuro)
-            window.addEventListener('click', (event) => {
-                if (event.target === modalApoie) {
-                    modalApoie.style.display = 'none';
-                }
-            });
-
-            // Função prática para copiar a chave Pix
-            btnCopiarPix.addEventListener('click', () => {
-                navigator.clipboard.writeText(chavePix).then(() => {
-                    // Feedback visual no botão
-                    const textoOriginal = btnCopiarPix.innerText;
-                    btnCopiarPix.innerText = 'Copiado com sucesso! ✔️';
-                    btnCopiarPix.style.backgroundColor = '#2e7d32'; // Fica verde claro
-                    
-                    // Volta ao normal depois de 2.5 segundos
-                    setTimeout(() => {
-                        btnCopiarPix.innerText = textoOriginal;
-                        btnCopiarPix.style.backgroundColor = '#0d2b22';
-                    }, 2500);
-                }).catch(err => {
-                    console.error('Erro ao copiar: ', err);
-                });
-            });
-        });
-    </script> </body>
-</html>

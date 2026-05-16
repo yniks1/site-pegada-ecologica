@@ -648,3 +648,33 @@ footer {
 .btn-copiar:hover {
     background-color: #1a463d;
 }
+/* ========================================== */
+/* ÁREA DE ANÚNCIOS (ADSENSE)                 */
+/* ========================================== */
+.ad-container {
+    margin: 25px auto; /* Dá um respiro bom entre o título do resultado e o gráfico */
+    text-align: center;
+    width: 100%;
+    max-width: 728px; /* Tamanho padrão de um banner horizontal largo do Google */
+}
+
+/* A palavra "Publicidade" bem discreta */
+.ad-label {
+    display: block;
+    font-size: 0.65rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Caixinha para você visualizar enquanto o Google não aprova */
+.ad-placeholder-visual {
+    background-color: rgba(16, 44, 38, 0.03); /* Fundo super suave */
+    border: 1px dashed rgba(16, 44, 38, 0.2);
+    color: var(--primary-color);
+    padding: 30px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

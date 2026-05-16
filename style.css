@@ -594,26 +594,22 @@ footer {
 /* 1. Posicionando o botão de apoio no topo direito, fixo na tela */
 /* 1. Posicionando o botão de apoio logo abaixo do menu */
 /* 1. Posicionando o botão de apoio logo abaixo do menu */
-.btn-apoie {
-    position: absolute; 
-    top: 95px; /* Ajuste fino para não encostar na faixa verde */
-    right: 3%; /* 👈 Diminuí a porcentagem para ele ficar bem mais perto da borda direita! */
-    z-index: 9999; /* 🚀 ISSO RESOLVE O CLIQUE! Joga o botão para a frente de absolutamente tudo no site */
-    
-    /* Estilos Visuais do Botão */
-    background-color: #0d2b22; 
-    color: #ffffff; 
-    padding: 10px 24px; 
-    border: none;
-    border-radius: 30px; 
-    cursor: pointer;
-    font-weight: 600;
-    font-family: inherit;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* ========================================== */
+/* ESTILO DO BOTÃO APOIE NO MENU              */
+/* ========================================== */
+.btn-apoie-menu {
+    background-color: var(--bg-color); /* Usa o creme do site como fundo */
+    color: var(--primary-color) !important; /* Texto na cor verde escuro */
+    font-weight: 700 !important; /* Deixa a fonte mais gordinha/negrito */
+    padding: 6px 18px; /* Dá o formato de pílula */
+    border-radius: 20px;
+    margin-left: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombrinha leve */
 }
 
-.btn-apoie:hover {
-    background-color: #1a4d3f; 
-    transform: scale(1.05); /* Aumentei um pouquinho o zoom do hover para ficar mais dinâmico */
+.btn-apoie-menu:hover {
+    transform: scale(1.05); /* Pequeno pulo ao passar o mouse */
+    background-color: #ffffff; /* Fica branco para mostrar o clique */
+    opacity: 1 !important; /* Força para não pegar a opacidade do link normal */
 }

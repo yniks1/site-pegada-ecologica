@@ -593,18 +593,19 @@ footer {
 
 /* 1. Posicionando o botão de apoio no topo direito, fixo na tela */
 /* 1. Posicionando o botão de apoio logo abaixo do menu */
+/* 1. Posicionando o botão de apoio logo abaixo do menu */
 .btn-apoie {
-    position: absolute; /* Mudamos para absolute: agora ele gruda na página, não na tela! */
-    top: 90px; /* Distância do topo. Ajuste esse número se precisar subir ou descer um pouquinho */
-    right: 10%; /* Alinha perfeitamente com a mesma margem do botão de LOGIN */
-    z-index: 10; /* Fica acima do fundo, mas sem exageros */
+    position: absolute; 
+    top: 95px; /* Ajuste fino para não encostar na faixa verde */
+    right: 3%; /* 👈 Diminuí a porcentagem para ele ficar bem mais perto da borda direita! */
+    z-index: 9999; /* 🚀 ISSO RESOLVE O CLIQUE! Joga o botão para a frente de absolutamente tudo no site */
     
     /* Estilos Visuais do Botão */
-    background-color: #0d2b22; /* Verde escuro do tema */
-    color: #ffffff; /* Texto branco */
-    padding: 10px 24px; /* Dei uma leve afinada para ele encaixar melhor debaixo do menu */
+    background-color: #0d2b22; 
+    color: #ffffff; 
+    padding: 10px 24px; 
     border: none;
-    border-radius: 30px; /* Botão arredondado */
+    border-radius: 30px; 
     cursor: pointer;
     font-weight: 600;
     font-family: inherit;
@@ -613,6 +614,6 @@ footer {
 }
 
 .btn-apoie:hover {
-    background-color: #1a4d3f; /* Verde mais claro no hover */
-    transform: scale(1.03); /* Leve zoom no hover */
+    background-color: #1a4d3f; 
+    transform: scale(1.05); /* Aumentei um pouquinho o zoom do hover para ficar mais dinâmico */
 }

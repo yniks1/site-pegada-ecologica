@@ -114,21 +114,16 @@ function montarFormulario() {
 
 // 🔹 ATUALIZA A BARRA DE PROGRESSO
 function atualizarProgresso() {
-  // Conta quantas perguntas existem no total
   const totalPerguntas = document.querySelectorAll('.options-grid').length;
-  // Conta quantas perguntas já tiveram uma opção selecionada
   const perguntasRespondidas = document.querySelectorAll("input:checked").length;
   
-  // Calcula a porcentagem
   const porcentagem = (perguntasRespondidas / totalPerguntas) * 100;
   
-  // Faz a barra crescer visualmente
   const barraProgresso = document.getElementById("barra-progresso");
   if (barraProgresso) {
     barraProgresso.style.width = porcentagem + "%";
   }
 
-  // Atualiza o textinho em cima da barra
   const stepText = document.getElementById("step-text");
   if (stepText) {
     stepText.innerText = `Progresso: ${Math.round(porcentagem)}%`;
@@ -152,14 +147,23 @@ function calcular() {
   gerarGrafico(total);
   gerarDicas();
 
-  // 👇 PASSO 2: MOSTRA O BOTÃO DE REINICIAR APÓS EXIBIR TUDO 👇
+  // 👇 MOSTRA O BOTÃO DE REINICIAR E O ANÚNCIO APÓS EXIBIR TUDO 👇
   const btnReiniciar = document.getElementById('btn-reiniciar');
   if (btnReiniciar) btnReiniciar.style.display = 'block';
+  
+  // Linha nova: Mostra a área de anúncios
+  const areaAnuncio = document.getElementById('area-anuncio');
+  if (areaAnuncio) areaAnuncio.style.display = 'block';
 }
+
 // 🔹 FUNÇÃO PARA REINICIAR O CÁLCULO
 function reiniciarCalculo() {
-    // 1. Esconde o botão de reiniciar
+    // 1. Esconde o botão de reiniciar e a área do anúncio
     document.getElementById('btn-reiniciar').style.display = 'none';
+    
+    // Linha nova: Esconde a área de anúncios novamente
+    const areaAnuncio = document.getElementById('area-anuncio');
+    if (areaAnuncio) areaAnuncio.style.display = 'none';
 
     // 2. Limpa a área de resultados, gráfico e dicas
     document.getElementById('resultado').innerText = "";
@@ -191,6 +195,7 @@ function reiniciarCalculo() {
     // 6. Rola a tela suavemente para o topo (onde estão as perguntas)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 function gerarGrafico(total) {
   const ctx = document.getElementById('grafico').getContext('2d');
   if (grafico) { grafico.destroy(); }
@@ -285,6 +290,7 @@ function abrirModalOqueE(event) {
 function fecharModalOqueE() {
     document.getElementById("modal-oque-e").style.display = "none";
 }
+
 // ==========================================
 // LÓGICA DO CHAT DA YUNA
 // ==========================================
@@ -292,7 +298,6 @@ function fecharModalOqueE() {
 // Função para minimizar ou maximizar o chat
 function toggleYunaChat() {
     const body = document.getElementById('yuna-chat-body');
-    // Se estiver escondido (none), ele muda para flex (abre). Se não, ele esconde (none).
     if (body.style.display === 'none' || body.style.display === '') {
         body.style.display = 'flex';
     } else {
@@ -302,12 +307,12 @@ function toggleYunaChat() {
 
 // Função que faz a comunicação com a IA
 async function enviarMensagemYuna(evento) {
-    evento.preventDefault(); // Evita recarregar a página
+    evento.preventDefault(); 
     
     const input = document.getElementById('yuna-input');
     const textoUsuario = input.value.trim();
     
-    if (!textoUsuario) return; // Não faz nada se enviar vazio
+    if (!textoUsuario) return; 
 
     const chat = document.getElementById('yuna-mensagens');
 
@@ -326,7 +331,7 @@ async function enviarMensagemYuna(evento) {
     // 2. CRIAR O INDICADOR DE "DIGITANDO"
     const digitandoElemento = document.createElement('div');
     digitandoElemento.id = 'yuna-digitando';
-    digitandoElemento.className = 'msg yuna-msg'; // Usa suas classes de estilo existentes
+    digitandoElemento.className = 'msg yuna-msg'; 
     digitandoElemento.innerHTML = `
         <span class="autor">Yuna</span>
         <p><em>Pensando.. 🍃</em></p>
@@ -339,7 +344,7 @@ async function enviarMensagemYuna(evento) {
         const resposta = await fetch('https://pegada-yuna.onrender.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ texto: textoUsuario }) // Mantendo 'texto' conforme seu backend
+            body: JSON.stringify({ texto: textoUsuario }) 
         });
 
         const dados = await resposta.json();
@@ -374,4 +379,3 @@ async function enviarMensagemYuna(evento) {
     // Rola o scroll para baixo novamente para ver a resposta nova
     chat.scrollTop = chat.scrollHeight;
 }
-

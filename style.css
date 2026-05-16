@@ -198,50 +198,6 @@ nav a:hover {
         grid-template-columns: 1fr 1fr;
         /* ========================================== */
 /* AJUSTES FINAIS PARA O CELULAR (TELA PEQUENA)*/
-/* ========================================== */
-@media (max-width: 600px) {
-    
-    /* 1. Faz o título subir e ajusta o tamanho da fonte */
-    .hero {
-        padding-top: 2rem; /* Reduz o espaço gigante do topo */
-        padding-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem; /* Diminui um pouco o título para não quebrar tantas linhas */
-        line-height: 1.2;
-    }
-
-    .hero p {
-        font-size: 0.95rem; /* Ajusta o texto para leitura no celular */
-        padding: 0 10px; /* Dá uma margem de respiro nas laterais */
-    }
-
-    /* 2. Organiza o menu superior e coloca os botões lado a lado */
-    header {
-        flex-direction: column; /* Coloca a logo em cima e os botões embaixo */
-        padding: 1rem 5%;
-        gap: 12px; /* Espaço entre a logo e o menu */
-    }
-
-    header nav {
-        display: flex;
-        flex-wrap: wrap; /* Permite quebrar linha só se for extremamente necessário */
-        justify-content: center; /* Centraliza tudo */
-        align-items: center;
-        gap: 12px; /* Espaçamento unificado entre os itens */
-    }
-
-    nav a {
-        margin-left: 0; /* Remove a margem antiga que quebrava o layout */
-        font-size: 0.85rem;
-    }
-
-    /* Garante que o LOGIN e o APOIE não tenham margens sobrando */
-    #btn-login, .btn-apoie-menu {
-        margin-left: 0; 
-        padding: 6px 14px; /* Dá uma leve afinada no botão para caberem juntos */
-    }
 }
 
 .option-btn {

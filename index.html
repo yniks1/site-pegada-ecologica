@@ -134,48 +134,38 @@
     <script src="script.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btnApoie = document.getElementById('btnApoie');
-            const modalApoie = document.getElementById('modalApoie');
-            const closeModal = document.getElementById('closeModal');
-            const btnCopiarPix = document.getElementById('btnCopiarPix');
-            const chavePix = document.getElementById('chavePix').innerText;
+        // Abre a janela de apoio
+        function abrirModalApoie(event) {
+            if(event) event.preventDefault(); // Impede o site de dar aquele "pulo" chato pro topo
+            document.getElementById('modalApoie').style.display = 'flex';
+        }
 
-            // Função para abrir o modal (usando flex para centralizar perfeitamente)
-            btnApoie.addEventListener('click', () => {
-                modalApoie.style.display = 'flex';
-            });
+        // Fecha a janela de apoio
+        function fecharModalApoie() {
+            document.getElementById('modalApoie').style.display = 'none';
+        }
 
-            // Fechar no botão X
-            closeModal.addEventListener('click', () => {
-                modalApoie.style.display = 'none';
+        // Copia a chave Pix e dá o aviso de sucesso
+        function copiarPix() {
+            const chave = document.getElementById('chavePix').innerText;
+            
+            navigator.clipboard.writeText(chave).then(() => {
+                const btn = document.getElementById('btnCopiarPix');
+                const textoOriginal = 'Copiar Chave Pix';
+                
+                btn.innerText = 'Copiado com sucesso! ✔️';
+                btn.style.backgroundColor = '#2e7d32'; // Fica verdinho
+                
+                // Volta ao normal depois de 2.5 segundos
+                setTimeout(() => {
+                    btn.innerText = textoOriginal;
+                    btn.style.backgroundColor = '#0d2b22'; // Volta para o verde escuro
+                }, 2500);
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+                alert('Não foi possível copiar a chave automaticamente. Por favor, selecione e copie o texto.');
             });
-
-            // Fechar ao clicar fora da caixinha (no fundo escuro)
-            window.addEventListener('click', (event) => {
-                if (event.target === modalApoie) {
-                    modalApoie.style.display = 'none';
-                }
-            });
-
-            // Função prática para copiar a chave Pix
-            btnCopiarPix.addEventListener('click', () => {
-                navigator.clipboard.writeText(chavePix).then(() => {
-                    // Feedback visual no botão
-                    const textoOriginal = btnCopiarPix.innerText;
-                    btnCopiarPix.innerText = 'Copiado com sucesso! ✔️';
-                    btnCopiarPix.style.backgroundColor = '#2e7d32'; // Fica verde claro
-                    
-                    // Volta ao normal depois de 2.5 segundos
-                    setTimeout(() => {
-                        btnCopiarPix.innerText = textoOriginal;
-                        btnCopiarPix.style.backgroundColor = '#0d2b22';
-                    }, 2500);
-                }).catch(err => {
-                    console.error('Erro ao copiar: ', err);
-                });
-            });
-        });
+        }
     </script> 
 </body>
 </html>
